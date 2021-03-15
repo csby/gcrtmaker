@@ -380,6 +380,9 @@ func (s *Frame) createCrt() error {
 	keyPath := filepath.Join(folder, fmt.Sprintf("%s.key", s.cfgItem.Crt.Name))
 	private.ToFile(keyPath, "")
 
+	pubPath := filepath.Join(folder, fmt.Sprintf("%s.pub", s.cfgItem.Crt.Name))
+	public.ToFile(pubPath)
+
 	return nil
 }
 
